@@ -1,0 +1,26 @@
+html {
+    font-family: Lato, Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+body, div {
+    margin: 0;
+}
+
+header {
+    padding: 15px;
+    background-color: darkslategray;
+    color: floralwhite;
+}
+
+main {
+    padding: 15px;
+    background-color: floralwhite;
+    color: #0A0A0A;
+    //font-family: "Impact", sans-serif;
+}
+
+footer {
+    padding: 15px;
+    background-color: #404040;
+    color: floralwhite;
+}
