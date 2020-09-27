@@ -1,9 +1,9 @@
 import React from "react"
 
-function Header(props) {
+function Header() {
     return (
         <header>
-            Header here
+            Realtime document editor
         </header>
     )
 }

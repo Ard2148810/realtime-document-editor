@@ -1,0 +1,11 @@
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.cursive {
+    font-style: italic;
+}
