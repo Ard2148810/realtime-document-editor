@@ -5,8 +5,12 @@ import Toolbar from "./Toolbar";
 function Main(props) {
     return (
         <main>
-            <Toolbar />
-            <TextEditor content={props.content} style={props.style} setContent={props.setContent}  />
+            <Toolbar getSelectedChunksRange={props.getSelectedChunksRange}/>
+            <TextEditor content={props.content}
+                        style={props.style}
+                        setContent={props.setContent}
+                        onEditorClick={props.onEditorClick}
+            />
         </main>
     )
 }
