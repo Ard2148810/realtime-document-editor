@@ -53,7 +53,7 @@ footer {
     min-height: 100vh;
 }
 
-#TextEditor {
+.text-editor {
     background-color: white;
     border: 1px solid #eaeaea;
     padding: 10px;
