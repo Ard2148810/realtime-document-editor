@@ -10,7 +10,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-medium-editor": "^1.8.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "websocket": "^1.0.32"
   },
   "scripts": {
     "start": "react-scripts start",
