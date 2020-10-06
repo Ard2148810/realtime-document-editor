@@ -3,21 +3,19 @@ import Header from "./components/Header"
 import Main from "./components/Main"
 import Footer from "./components/Footer"
 import "./style/style.css"
-import "./style/content.css"
 
 class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            content: "<span><span class='bold'>Hel</span>lo there!</span>"
+            content: "<p><br/></p>"
         }
     }
 
     setContent = (content) => {
-        this.setState({ content: content })
+        this.setState({content: content})
     }
-
 
     render() {
         return (
