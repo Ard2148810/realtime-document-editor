@@ -4,8 +4,6 @@ import Main from "./components/Main"
 import Footer from "./components/Footer"
 import "./style/style.css"
 
-//const WebSocket = require('ws');
-
 const PORT = '5005'
 const ADDRESS = 'localhost'
 
