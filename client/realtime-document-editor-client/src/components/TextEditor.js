@@ -9,11 +9,11 @@ class TextEditor extends Component {
         return (
             <Editor
                 className="text-editor"
-                text={this.props.text}
+                text={this.props.content}
                 onChange={this.props.setContent}
                 options={{
                     placeholder: {
-                        text: "You can start typing here..."
+                        text: ""
                     }
                 }}
             />

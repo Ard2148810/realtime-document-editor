@@ -9,9 +9,27 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+const clients = new Set();
+let content = ""
+
 const wsServer = new WebSocket.Server({ noServer: true });
 wsServer.on('connection', socket => {
-	socket.on('message', message => console.log(message));
+	const msg = {
+		content: content
+	}
+	socket.send(JSON.stringify(msg))
+	socket.on('message', message => {
+		const msg = JSON.parse(message)
+		content = msg.content
+		const response = { content: content }
+
+		clients.forEach(client => {
+			if(client !== socket) {
+				client.send(JSON.stringify(response))
+			}
+		})
+	});
+	clients.add(socket)
 });
 
 

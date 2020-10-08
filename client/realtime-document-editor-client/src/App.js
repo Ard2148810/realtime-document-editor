@@ -17,18 +17,28 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: "<p><br/></p>"
+            content: ""
         }
     }
 
     componentDidMount() {
         webSocket.onmessage = (msg) => {
-            console.log(msg.data)
+            const data = JSON.parse(msg.data)
+            this.setState({ content: data.content} )
         }
     }
 
-    setContent = (content) => {
-        this.setState({content: content})
+    onContentChanged = (content) => {
+        this.setState({ content: content })
+        this.sendContent(content);
+    }
+
+    sendContent(content) {
+        const msg = {
+            author: "AuthorPlaceholder",
+            content: content
+        }
+        webSocket.send(JSON.stringify(msg))
     }
 
     render() {
@@ -37,7 +47,7 @@ class App extends Component {
                 <Header />
                 <Main
                     content={this.state.content}
-                    setContent={this.setContent}
+                    setContent={this.onContentChanged}
                 />
                 <Footer />
             </div>
