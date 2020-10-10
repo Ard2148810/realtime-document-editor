@@ -17,7 +17,7 @@ main {
     background-color: floralwhite;
     color: #0A0A0A;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
     min-height: 100px;
 }
@@ -29,6 +29,12 @@ footer {
     align-items: center;
     background-color: #404040;
     color: floralwhite;
+    box-shadow: inset 0 15px 15px -15px #242424;
+}
+
+button {
+    background: #5c5c5c;
+    border: none;
 }
 
 .App {
@@ -48,11 +54,6 @@ footer {
     margin-bottom: 5px;
 }
 
-#root {
-    display: flex;
-    min-height: 100vh;
-}
-
 .text-editor {
     background-color: white;
     border: 1px solid #eaeaea;
@@ -62,4 +63,56 @@ footer {
     cursor: text;
     box-shadow: 0 0 5px 5px #efebe2;
     border-radius: 5px;
+}
+
+.users {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.users-label {
+    padding: 5px;
+}
+
+.btn-switch-users-show {
+    margin-right: 10px;
+    border-radius: 40px;
+    height: 40px;
+    width: 40px;
+}
+
+.btn-switch-users-show:hover {
+    background-color: #6A6A6A;
+}
+
+.user {
+    padding: 5px;
+    margin-right: 3px;
+    align-items: center;
+    display: flex;
+    transition: all 0.5s;
+    overflow: hidden;
+    max-width: 100px;
+}
+
+.user:hover {
+    max-width: 500px;
+}
+
+.user-folded {
+    padding: 0;
+    margin-right: 0;
+    max-width: 0 !important;
+
+}
+
+.name-label {
+    transition: all 0.5s;
+    white-space: nowrap;
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
 }
