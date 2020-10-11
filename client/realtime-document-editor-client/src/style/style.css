@@ -35,6 +35,21 @@ footer {
 button {
     background: #5c5c5c;
     border: none;
+    color: floralwhite;
+    border-radius: 3px;
+    padding: 8px 20px;
+}
+
+.button-green {
+    background-color: #2c922f;
+}
+
+.button-green:hover {
+    background-color: #3da740;
+}
+
+.button:hover {
+    background-color: #6A6A6A;
 }
 
 .App {
@@ -80,10 +95,7 @@ button {
     border-radius: 40px;
     height: 40px;
     width: 40px;
-}
-
-.btn-switch-users-show:hover {
-    background-color: #6A6A6A;
+    padding: 8px;
 }
 
 .user {
@@ -110,6 +122,24 @@ button {
 .name-label {
     transition: all 0.5s;
     white-space: nowrap;
+}
+
+.login-container {
+    padding: 10px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.login {
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
 }
 
 #root {

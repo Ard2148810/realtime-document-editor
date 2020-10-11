@@ -14,11 +14,11 @@ let content = ""
 
 const wsServer = new WebSocket.Server({ noServer: true })
 wsServer.on('connection', socket => {
-
+	const users = Array.from(clients.values()).filter((client) => { return client !== "" })
 	let msg = {
 		type: "startValues",
 		content: content,
-		users: Array.from(clients.values())
+		users: users
 	}
 	socket.send(JSON.stringify(msg))	// Send current values for the user that just joined
 

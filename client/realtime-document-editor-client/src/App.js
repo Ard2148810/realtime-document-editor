@@ -15,20 +15,12 @@ class App extends Component {
         super(props)
         this.state = {
             content: "",
-            users: ["LocalUser"]
+            users: [],
+            userNameSelected: false
         }
     }
 
     componentDidMount() {
-
-        webSocket.onopen = () => {
-
-            const msg = {
-                type: "newUser",
-                name: `User${Math.floor(Math.random() * 1000)}`
-            }
-            webSocket.send(JSON.stringify(msg))
-        }
 
         webSocket.onmessage = (msg) => {
             const data = JSON.parse(msg.data)
@@ -47,7 +39,7 @@ class App extends Component {
                 case "startValues": {
                     this.setState(prevState => {
                         const newUsers = prevState.users.concat(data.users)
-                        return { users: newUsers }
+                        return { users: newUsers, content: data.content }
                     })
                     break
                 }
@@ -60,6 +52,22 @@ class App extends Component {
     onContentChanged = (content) => {
         this.setState({ content: content })
         this.sendContent(content)
+    }
+
+    setUserName = (name) => {
+        this.setState( prevState => {
+            const newUsers = [...prevState.users, name]
+            return {
+                users: newUsers,
+                userNameSelected: true
+            }
+        })
+
+        const msg = {
+            type: "newUser",
+            name: name
+        }
+        webSocket.send(JSON.stringify(msg))
     }
 
     sendContent(content) {
@@ -79,6 +87,8 @@ class App extends Component {
                     content={this.state.content}
                     setContent={this.onContentChanged}
                     users={this.state.users}
+                    userNameSelected={this.state.userNameSelected}
+                    setUserName={this.setUserName}
                 />
                 <Footer />
             </div>
