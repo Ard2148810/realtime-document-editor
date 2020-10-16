@@ -47,6 +47,18 @@ wsServer.on('connection', socket => {
 		})
 	})
 
+	socket.on('close', () => {
+		const userName = clients.get(socket)
+		clients.delete(socket)
+		const msg = {
+			type: "userDisconnected",
+			name: userName
+		}
+		clients.forEach((name, client) => {
+			client.send(JSON.stringify(msg))
+		})
+	})
+
 	clients.set(socket, "")
 
 })

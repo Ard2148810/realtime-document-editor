@@ -43,6 +43,15 @@ class App extends Component {
                     })
                     break
                 }
+                case "userDisconnected": {
+                    this.setState(prevState => {
+                        const newUsers = prevState.users.filter(user => {
+                            return user !== data.name
+                        })
+                        return { users: newUsers }
+                    })
+                    break
+                }
                 default: console.log(`Unknown message type: ${msg.type}`)
             }
 
