@@ -7,14 +7,17 @@ body, div {
 }
 
 header {
+    font-family: "Helvetica Neue", "Helvetica", sans-serif;
     padding: 30px;
     background-color: darkslategray;
     color: floralwhite;
+    font-weight: bolder;
+    position: relative;
 }
 
 main {
     padding: 15px;
-    background-color: floralwhite;
+    background-color: #fffaf0;
     color: #0A0A0A;
     display: flex;
     flex-direction: column;
@@ -29,7 +32,7 @@ footer {
     align-items: center;
     background-color: #404040;
     color: floralwhite;
-    box-shadow: inset 0 15px 15px -15px #242424;
+    position: relative;
 }
 
 button {
@@ -70,14 +73,18 @@ button {
 }
 
 .text-editor {
+    flex: 1;
+}
+
+.editor-wrapper {
     background-color: white;
-    border: 1px solid #eaeaea;
-    padding: 10px;
+    border: 1px solid #bbbbbb;
+    padding: 24px;
     margin: 15px;
+    display: flex;
     flex: 1;
     cursor: text;
-    box-shadow: 0 0 5px 5px #efebe2;
-    border-radius: 5px;
+    position: relative;
 }
 
 .users {
@@ -138,9 +145,17 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 5px;
-    border: 1px solid #d2d2d2;
+    border: 1px solid #575757;
+    position: relative;
 }
+
+.triangle {
+    background-color: inherit;
+    border-style: solid;
+    height: 0;
+    width: 0;
+}
+
 
 #root {
     display: flex;

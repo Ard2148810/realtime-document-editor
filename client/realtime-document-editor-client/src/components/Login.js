@@ -1,6 +1,7 @@
 import React from "react"
 import { IconContext } from "react-icons"
 import { FaUserCircle } from "react-icons/all";
+import CornerTriangle from "./CornerTriangle";
 
 class Login extends React.Component {
 
@@ -25,7 +26,8 @@ class Login extends React.Component {
         return (
             <div className="login-container">
                 <div className="login">
-                    <IconContext.Provider value={{ color: "darkgrey" }}>
+                    <CornerTriangle sideX="left" sideY="top" color={"#575757"} size={24} />
+                    <IconContext.Provider value={{ color: "darkslategray" }}>
                         <FaUserCircle size={"100"}/>
                         <p><h4>Type your username</h4></p>
                         <div>
